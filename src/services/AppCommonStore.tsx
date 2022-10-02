@@ -22,22 +22,15 @@ const [userInfo, setUserInfo] = createSignal(
   }
 );
 
-const getRepository = (userName: string) => {
-  getUserInfo(userName);
-  fetch(`https://api.github.com/users/${userName}/repos`)
-    .then((res) => res.json())
-    .then((data) => {
-      setRepoCollection(data);
-    })
-    .catch((err) => console.log(err));
-};
+// const getRepository = (userName: string) => {
+//   getUserInfo(userName);
+//   fetch(`https://api.github.com/users/${userName}/repos`)
+//     .then((res) => res.json())
+//     .then((data) => {
+//       setRepoCollection(data);
+//     })
+//     .catch((err) => console.log(err));
+// };
 
-const getUserInfo = (userName: string) => {
-  fetch(`https://api.github.com/users/${userName}`)
-    .then((res) => res.json())
-    .then((data) => {
-      setUserInfo(data);
-    })
-    .catch((err) => console.log(err));
-};
-export { getRepository, repoCollection, setRepoCollection, userInfo };
+
+export { repoCollection, setRepoCollection, userInfo,setUserInfo };
